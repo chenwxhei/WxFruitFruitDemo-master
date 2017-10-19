@@ -1,0 +1,30 @@
+namespace WeFruit.EFModels
+{
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Data.Entity.Spatial;
+
+    [Table("ShoppingCart")]
+    public partial class ShoppingCart
+    {
+        [Key]
+        [Column(Order = 0)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public long CusId { get; set; }
+
+        [Key]
+        [Column(Order = 1)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public long ProCode { get; set; }
+
+        public int? Qty { get; set; }
+
+        public DateTime? CreateTime { get; set; }
+
+        public virtual Customer Customer { get; set; }
+
+        public virtual Product Product { get; set; }
+    }
+}
