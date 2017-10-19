@@ -30,7 +30,7 @@
         {
             <div class="swiper-slide">
                 <a href="@banner.Link">
-                    <img src="@banner.Image" alt="">
+                    <img src="@banner.Image" alt="@banner.Memo">
                 </a>
             </div>
         }
@@ -45,7 +45,7 @@
         <div class="swiper-wrapper">
             @foreach (var notice in Model.Notices)
             {
-                <a class="swiper-slide" href="gonggao_xq.html"><i>最新</i>@notice.Title</a>
+                <a class="swiper-slide" href="@Url.Action("","",new {notice.Id})"><i>@notice.Title</i>@notice.Body</a>
             }
         </div>
     </div>
@@ -59,7 +59,7 @@
         @foreach (var product in Model.Products)
         {
             <li>
-                <a href="#">
+                <a href="@Url.Action("","",new {product.Code})">
                     <img src="@product.ProPhotoes.First().ImgUrl">
                 </a>
                 <div class="product_text">
@@ -75,10 +75,10 @@
                             <i>￥</i><b>@product.SellPrice</b>
                             @foreach (var tag in product.Tags)
                             {
-                                <span>@product.Name</span>
+                                <span>@tag.Name</span>
                             }
                         </p>
-                        <a href="product_xq.html">立即购买</a>
+                        <a href="@Url.Action("","",new {product.Code})">立即购买</a>
                     </h3>
                 </div>
             </li>

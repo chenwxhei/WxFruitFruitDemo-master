@@ -11,6 +11,8 @@ namespace WeFruit.Weixin.Controllers
 {
     public class HomeController : Controller
     {
+        HomeViewModel homeViewModel = new HomeViewModel();
+
         public IBannerService BannerService { get; set; }
 
         public INoticeService NoticeService { get; set; }
@@ -19,11 +21,19 @@ namespace WeFruit.Weixin.Controllers
 
         public ActionResult Index()
         {
-            HomeViewModel homeViewModel=new HomeViewModel();
+            
             homeViewModel.NoticeNum = NoticeService.GetCount(n => true);
             homeViewModel.Banners = BannerService.GetEntities(b => true);
             homeViewModel.Notices = NoticeService.GetEntitiesByPage(3, 1, false, m => true, m => m.ModiTime);
             homeViewModel.Products = ProductService.GetEntitiesByPage(3, 1, false, p => p.Type == 1, p => p.Moditime);
+            return View(homeViewModel);
+        }
+
+        public ISortService SortService { get; set; }
+
+        public ActionResult Classify()
+        {
+            homeViewModel.Sorts = SortService.GetEntities(b => true);
             return View(homeViewModel);
         }
     }

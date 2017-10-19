@@ -15,5 +15,7 @@ namespace WeFruit.Weixin.Models
 
         public IEnumerable<Product> Products { get; set; }
 
+        public IEnumerable<Sort> Sorts { get; set; }
+
     }
 }
