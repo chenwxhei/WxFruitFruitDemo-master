@@ -19,8 +19,6 @@ namespace WeFruit.EFModels
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public long No { get; set; }
 
-        [Key]
-        [Column(Order = 2)]
         [StringLength(50)]
         public string ImgUrl { get; set; }
 

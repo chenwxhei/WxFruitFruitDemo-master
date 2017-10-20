@@ -20,6 +20,7 @@ namespace WeFruit.EFModels
         public virtual DbSet<OrederBillChi> OrederBillChis { get; set; }
         public virtual DbSet<Payment> Payments { get; set; }
         public virtual DbSet<Product> Products { get; set; }
+        public virtual DbSet<ProPhoto> ProPhotoes { get; set; }
         public virtual DbSet<ProReview> ProReviews { get; set; }
         public virtual DbSet<ShoppingCart> ShoppingCarts { get; set; }
         public virtual DbSet<Sort> Sorts { get; set; }
@@ -27,7 +28,6 @@ namespace WeFruit.EFModels
         public virtual DbSet<SystemConfig> SystemConfigs { get; set; }
         public virtual DbSet<Tag> Tags { get; set; }
         public virtual DbSet<User> Users { get; set; }
-        public virtual DbSet<ProPhoto> ProPhotoes { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
