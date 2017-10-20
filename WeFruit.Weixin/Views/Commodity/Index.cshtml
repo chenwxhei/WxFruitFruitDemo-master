@@ -1,6 +1,6 @@
 ﻿@model WeFruit.Weixin.Models.HomeViewModel
 @{
-    ViewBag.Title = "Classify";
+    ViewBag.Title = "Index";
     Layout = "~/Views/_LayoutMaster.cshtml";
 }
 
@@ -8,16 +8,6 @@
 {
     <link href="~/Content/css/index.css" type="text/css" rel="stylesheet">
     <link href="~/Content/css/swiper.min.css" type="text/css" rel="stylesheet">
-    <style>
-        .aa { position: relative; }
-        .pos_abs { background-size: 100%;}
-
-        .bb {
-            left: 68.5px;
-            position: absolute;
-            top: 89.5px;
-        }
-    </style>
 }
 
 <!--ftop开始-->
@@ -33,18 +23,22 @@
 <!--ftop开始-->
 <div class="search_list">
     <ul>
-        @foreach (var sort in Model.Sorts)
+        @foreach (var product in Model.Products)
         {
-            <li class="aa">
-                <a href="@Url.Action("Index","Commodity",new {sort.Code})">
-                    <img class="pos_abs" src="@sort.ImgUrl" style="width: 197px;"/>
-                    <span class="bb">@sort.Name</span>
+            <li>
+                <a href="@Url.Action("Index","Prodetail",new {product.Code})">
+                    <img src="@product.ProPhotoes.First().ImgUrl">
+                    <div class="search_item">
+                        <p>@product.Name</p>
+                        <h2>
+                            <i>￥</i><b>@product.SellPrice</b><span>月销18252笔</span>
+                        </h2>
+                    </div>
                 </a>
             </li>
         }
     </ul>
 </div>
-
 
 @section Scrpit
 {
