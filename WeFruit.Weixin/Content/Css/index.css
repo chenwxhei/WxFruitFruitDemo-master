@@ -11,9 +11,9 @@
 .swiper-container-horizontal>.swiper-pagination-bullets{ right:10px !important;}
 .swiper-pagination-bullet{ width:6px !important; height:6px !important; background-color:#f0f1f5 !important; margin:0 3px !important; border-radius:8px !important;}
 .swiper-pagination-bullet-active{ width:12px !important; background-color:#f0f1f5 !important;}
-.index_knowledge{ background-color:#fff; border-bottom:1px solid #e6e6e6; margin:8px 0; position:relative; padding:10px 10px; height:51px; padding-left:55px;}
+.index_knowledge{ background-color:#fff; border-bottom:1px solid #e6e6e6; margin:8px 0; position:relative; padding:10px 10px; height:51px;}
 .index_knowledge img{ height: 30px; position:absolute; left:6px; top:50%; margin-top: -15px; display:block;}
-.index_knowledge .swiper-container{ width:100%; font-size:14px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; border-left:1px solid #e1e1e1; padding-left:10px; height:30px; line-height:30px;}
+.index_knowledge .swiper-container{ width:100%; font-size:14px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; padding-left:10px; height:30px; line-height:30px;}
 .index_knowledge .swiper-container a{ color:#000000; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
 .index_knowledge .swiper-container i{ color:#ff0000; border:1px solid #ff0000; padding:0 2px; border-radius:2px; margin-right:4px;}
 .index_mtitle{ background-color:#fff; font-size:16px; text-align:center; overflow: hidden;}

@@ -6,42 +6,16 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
     <title>@ViewBag.Title</title>
     <link href="~/Content/css/Cbase.css" type="text/css" rel="stylesheet">
+    <link href="~/Content/Css/index.css" rel="stylesheet" />
     @RenderSection("Style",false)
     <script src="~/Scripts/jquery-1.7.2.min.js" type="text/javascript"></script>
     <script src="~/Scripts/base.js" type="text/javascript"></script>
     
 
 </head>
-<body>
+<body class="modularbox">
 @RenderBody()
-<!--fixft开始-->
-<div class="fixft">
-    <a href="@Url.Action("Index", "Home")" class="current">
-        <span>
-            <img src="~/Content/Images/navicon_45.png" class="img1"><img src="~/Content/Images/navicon_28.png" class="img2">
-        </span>
-        <i>首页</i>
-    </a>
-    <a href="@Url.Action("Index","Classify")">
-        <span>
-            <img src="~/Content/Images/navicon_48.png" class="img1"><img src="~/Content/Images/navicon_30.png" class="img2">
-        </span>
-        <i>分类</i>
-    </a>
-    <a href="#">
-        <span>
-            <img src="~/Content/Images/navicon_50.png" class="img1"><img src="~/Content/Images/navicon_32.png" class="img2"><em>12</em>
-        </span>
-        <i>购物车</i>
-    </a>
-    <a href="#">
-        <span>
-            <img src="~/Content/Images/navicon_42.png" class="img1"><img src="~/Content/Images/navicon_35.png" class="img2">
-        </span>
-        <i>我的</i>
-    </a>
-</div>
-<!--fixft结束-->
+
 
 @RenderSection("Scrpit",false)
 </body>

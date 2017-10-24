@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = @ViewBag.Title;
+    Layout = "_LayoutMaster.cshtml";
+}
+
+@section Style
+{
+    @RenderSection("Style", false)
+}
+@RenderBody()
+<!--fixft开始-->
+<div class="fixft">
+    <a href="@Url.Action("Index", "Home")" class="current s">
+        <span>
+            <img src="~/Content/Images/navicon_45.png" class="img1"><img src="~/Content/Images/navicon_28.png" class="img2">
+        </span>
+        <i>首页</i>
+    </a>
+    <a href="@Url.Action("Classify","Product")" class="f">
+        <span>
+            <img src="~/Content/Images/navicon_48.png" class="img1"><img src="~/Content/Images/navicon_30.png" class="img2">
+        </span>
+        <i>分类</i>
+    </a>
+    <a href="#" class="g">
+        <span>
+            <img src="~/Content/Images/navicon_50.png" class="img1"><img src="~/Content/Images/navicon_32.png" class="img2"><em>12</em>
+        </span>
+        <i>购物车</i>
+    </a>
+    <a href="@Url.Action("Index","Center")" class="w">
+        <span>
+            <img src="~/Content/Images/navicon_42.png" class="img1"><img src="~/Content/Images/navicon_35.png" class="img2">
+        </span>
+        <i>我的</i>
+    </a>
+</div>
+<!--fixft结束-->
+@section Scrpit
+{
+@RenderSection("Scrpit", false)
+}

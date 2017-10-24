@@ -1,11 +1,13 @@
-﻿@{
+﻿
+
+@{
     ViewBag.Title = "Index";
     Layout = "~/Views/_LayoutMaster.cshtml";
 }
 
+
 @section Style
 {
-    <link href="~/Content/css/index.css" type="text/css" rel="stylesheet">
     <link href="~/Content/css/swiper.min.css" type="text/css" rel="stylesheet">
     <link href="~/Content/Css/fullscreenstyle.css" rel="stylesheet" />
 }
@@ -92,7 +94,7 @@
     <div class="shu">
         <i>购买数量</i><span class="jia">
             <img src="/Content/Images/icon_017.png">
-        </span><input class="shopcart-td-num" type="text" value="1"/><span class="jian">
+        </span><input class="shopcart-td-num" type="text" value="1" /><span class="jian">
             <img src="/Content/Images/icon_016.png">
         </span>
     </div>
@@ -184,9 +186,9 @@
         </div>
     </div>
 
-    
-    
-    
+
+
+
     <div class="fixft pro_bottom">
         <span>
             <b>
@@ -252,7 +254,7 @@
             $(".timer").timerInit();
         });
     </script>
-    
+
     <script>
         var swiper1 = new Swiper('.product_details',
             {
@@ -262,7 +264,7 @@
                 freeMode: true
             });
     </script>
-    
+
     <script>
         $(function() {
             var jian = $(".jian");
@@ -291,7 +293,7 @@
             });
         });
     </script>
-    
+
     <script>
         $(function() {
             $('.image img').fullscreenslides();
@@ -338,7 +340,7 @@
 
         });
     </script>
-    
+
     <script>
         $(function() {
             $(".ftop .comea").click(function() {
@@ -363,7 +365,7 @@
             }
         }
     </script>
-    
+
     <script>
         $(function() {
             $("#box a.linka").each(function(n) {
@@ -377,7 +379,7 @@
             });
         })
     </script>
-    
+
     <script>
         $(document).scroll(function() {
             var nowtop = $(document).scrollTop();
@@ -396,10 +398,3 @@
     </script>
 
 }
-
-
-
-
-
-
-
