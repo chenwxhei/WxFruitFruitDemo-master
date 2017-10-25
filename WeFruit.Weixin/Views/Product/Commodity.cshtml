@@ -1,4 +1,4 @@
-﻿@model WeFruit.Weixin.Models.HomeViewModel
+﻿@model IEnumerable<WeFruit.EFModels.Product>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/_LayoutMaster.cshtml";
@@ -16,7 +16,7 @@
         <a class="back" onClick="javascript:history.back(-1);"><img src="~/Content/Images/icon_03.png"></a>
         <div>
             <input type="text" placeholder="请输入您要搜索的产品">
-            <input class="dw" onclick="document.location='search_list.html'" type="button" value=" ">
+            <input class="dw" onclick="document.location='search_list.html'" type="button" value="">
         </div>
     </div>
     <div style="clear: both;"></div>
@@ -25,15 +25,20 @@
 <!--ftop开始-->
 <div class="search_list">
     <ul>
-        @foreach (var product in Model.Products)
+        @foreach (var products in Model)
         {
             <li>
-                <a href="@Url.Action("Index","Product",new {product.Code})">
-                    <img src="@product.ProPhotoes.First().ImgUrl">
+                <a href="#">
+                    <p>@products.ProPhotoes.Count</p>
+                    @*@foreach (var s in products.ProPhotoes)
+                    {
+                        <img src="@s.ImgUrl"/>
+                    }*@
+                    <img src="@products.ProPhotoes.First().ImgUrl"/>
                     <div class="search_item">
-                        <p>@product.Name</p>
+                        <p>@products.Name</p>
                         <h2>
-                            <i>￥</i><b>@product.SellPrice</b><span>月销18252笔</span>
+                            <i>￥</i><b>@products.SellPrice</b><span>月销18252笔</span>
                         </h2>
                     </div>
                 </a>

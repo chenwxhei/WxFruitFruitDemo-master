@@ -22,8 +22,8 @@ namespace WeFruit.EFModels
         }
 
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public long Code { get; set; }
+        [StringLength(50)]
+        public string Code { get; set; }
 
         [Required]
         [StringLength(50)]

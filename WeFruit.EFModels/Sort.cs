@@ -16,7 +16,8 @@ namespace WeFruit.EFModels
         }
 
         [Key]
-        public long Code { get; set; }
+        [StringLength(50)]
+        public string Code { get; set; }
 
         [StringLength(50)]
         public string Name { get; set; }

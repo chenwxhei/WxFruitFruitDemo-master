@@ -17,6 +17,9 @@ namespace WeFruit.EFModels
         [StringLength(50)]
         public string Body { get; set; }
 
+        [Column(TypeName = "text")]
+        public string Contents { get; set; }
+
         public long? PostUserId { get; set; }
 
         public DateTime? ModiTime { get; set; }

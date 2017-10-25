@@ -26,10 +26,10 @@ namespace WeFruit.Weixin.Controllers
 
         public IProductService ProductService { get; set; }
 
-        public ActionResult Commodity(int code)
+        public ActionResult Commodity(string code)
         {
-            homeViewModel.Products = ProductService.GetEntities(b => b.Sorts.First().Code == code);
-            return View(homeViewModel);
+            var Products = ProductService.GetEntities(b => b.Sorts.First().Code == code);
+            return View(Products);
         }
     }
 }

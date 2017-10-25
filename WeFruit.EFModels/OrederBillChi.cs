@@ -16,8 +16,8 @@ namespace WeFruit.EFModels
 
         [Key]
         [Column(Order = 1)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public long ProCode { get; set; }
+        [StringLength(50)]
+        public string ProCode { get; set; }
 
         [Column(TypeName = "numeric")]
         public decimal? UnitPrice { get; set; }

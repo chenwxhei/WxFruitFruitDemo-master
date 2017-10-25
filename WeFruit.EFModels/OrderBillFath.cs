@@ -32,7 +32,8 @@ namespace WeFruit.EFModels
         [Column(TypeName = "numeric")]
         public decimal? SumPrice { get; set; }
 
-        public long? Payment { get; set; }
+        [StringLength(50)]
+        public string Payment { get; set; }
 
         [StringLength(50)]
         public string Memo { get; set; }

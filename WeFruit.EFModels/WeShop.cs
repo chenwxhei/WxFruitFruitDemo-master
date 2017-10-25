@@ -55,6 +55,10 @@ namespace WeFruit.EFModels
                 .HasForeignKey(e => e.CusId)
                 .WillCascadeOnDelete(false);
 
+            modelBuilder.Entity<Notice>()
+                .Property(e => e.Contents)
+                .IsUnicode(false);
+
             modelBuilder.Entity<OrderBillFath>()
                 .Property(e => e.OrderPrice)
                 .HasPrecision(10, 2);

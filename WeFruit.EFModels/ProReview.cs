@@ -11,7 +11,9 @@ namespace WeFruit.EFModels
     {
         public long Id { get; set; }
 
-        public long ProCode { get; set; }
+        [Required]
+        [StringLength(50)]
+        public string ProCode { get; set; }
 
         public long? CusId { get; set; }
 
