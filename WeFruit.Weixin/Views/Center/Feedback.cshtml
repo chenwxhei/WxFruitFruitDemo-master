@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "意见反馈";
+    Layout = "~/Views/_LayoutMaster.cshtml";
+}
+
+@section Style
+{
+    <link href="~/Content/Css/center.css" rel="stylesheet" />
+}
+
+<!--ftop开始-->
+<div class="ftop">
+    <a class="back" onClick="javascript:history.back(-1);"><img src="/Content/Images/icon_03.png"></a>
+    <h2>@ViewBag.Title</h2>
+    <div style="clear: both;"></div>
+</div>
+<!--ftop开始-->
+<!--个人中心-意见反馈-->
+<div class="mind">
+    <div class="fill">
+        <textarea placeholder="请输入您的反馈内容"></textarea>
+    </div>
+    <h6>请详细描述您遇到的问题，有助于我们快速定位并解决问题,温馨提示：您提交的内容不能超过500字符！</h6>
+</div>
+<a class="makesure">提交</a>
+<!--个人中心-意见反馈-->
+

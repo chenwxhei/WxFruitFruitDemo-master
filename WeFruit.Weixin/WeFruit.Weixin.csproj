@@ -287,6 +287,12 @@
     <Content Include="Views\Product\Search.cshtml" />
     <Content Include="Views\Home\Notice.cshtml" />
     <Content Include="Views\Home\Notice_xq.cshtml" />
+    <Content Include="Views\Center\Site.cshtml" />
+    <Content Include="Views\Center\Site_add.cshtml" />
+    <Content Include="Views\Center\Feedback.cshtml" />
+    <Content Include="Views\Center\Aboutus.cshtml" />
+    <Content Include="Views\Center\Collect.cshtml" />
+    <Content Include="Views\Center\Set.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

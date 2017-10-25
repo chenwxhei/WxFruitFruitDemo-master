@@ -18,12 +18,13 @@ namespace WeFruit.Weixin.Controllers
 
         public IProductService ProductService { get; set; }
 
-        public ActionResult Index()
+        public ActionResult Index(int proid=1)
         {
             homeViewModel.NoticeNum = NoticeService.GetCount(n => true);
             homeViewModel.Banners = BannerService.GetEntities(b => true);
             homeViewModel.Notices = NoticeService.GetEntitiesByPage(3, 1, false, m => true, m => m.ModiTime);
-            homeViewModel.Products = ProductService.GetEntitiesByPage(3, 1, false, p => p.Type == 1, p => p.Moditime);
+            homeViewModel.Products = ProductService.GetEntitiesByPage(3, 1, false, p => p.Type == proid, p => p.Moditime);
+            homeViewModel.Proid = proid;
             return View(homeViewModel);
         }
 
