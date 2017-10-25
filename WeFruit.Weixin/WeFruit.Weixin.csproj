@@ -284,6 +284,7 @@
     <Content Include="Views\Product\Classify.cshtml" />
     <Content Include="Views\Product\Commodity.cshtml" />
     <Content Include="Views\_LayoutNav.cshtml" />
+    <Content Include="Views\Product\Search.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,15 +1,9 @@
-﻿@model WeFruit.Weixin.Models.HomeViewModel
+﻿
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/_LayoutMaster.cshtml";
 }
 
-@section Style
-{
-
-}
-
-<!--ftop开始-->
 <!--ftop开始-->
 <div class="ftop">
     <div class="index_search index_search01">
@@ -21,36 +15,32 @@
     </div>
     <div style="clear: both;"></div>
 </div>
-<!--ftop开始--> 
 <!--ftop开始-->
-<div class="search_list">
-    <ul>
-        @foreach (var products in Model.Products)
-        {
-            <li>
-                <a href="@Url.Action("Index","Product",new {products.Code})">
-                    <p>@products.ProPhotoes.Count</p>
-                    <img src="@products.ProPhotoes.First().ImgUrl"/>
-                    <div class="search_item">
-                        <p>@products.Name</p>
-                        <h2>
-                            <i>￥</i><b>@products.SellPrice</b><span>月销18252笔</span>
-                        </h2>
-                    </div>
-                </a>
-            </li>
-        }
-    </ul>
+<div class="search_result">
+    <h2><span>历史搜索</span><img src="/Content/Images/icon_028.png"></h2>
+    <p>
+        <a href="#">膨化零食</a>
+        <a href="#">母婴</a>
+        <a href="#">卫生纸</a>
+        <a href="#">洗衣粉</a>
+        <a href="#">果蔬</a>
+        <a href="#">坚果</a>
+        <a href="#">粮油</a>
+    </p>
+</div>
+<div class="block_bg"></div>
+<div class="prompt">
+    <img src="/Content/Images/img_011.jpg">
+    <h2>确定要清除历史搜索记录？</h2>
+    <p>
+        <a class="cancel">取消</a>
+        <a class="delete">删除</a>
+    </p>
 </div>
 
 @section Scrpit
 {
     <script>
-        $(".search_list ul li a img").each(function() {
-            var w = $(this).width();
-            $(this).height(w + "px");
-        });
-
         $(function() {
             $(".search_result>h2 img").click(function() {
                 $(".block_bg,.prompt").fadeIn();

@@ -1,5 +1,4 @@
-﻿
-
+﻿@model WeFruit.Weixin.Models.HomeViewModel
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/_LayoutMaster.cshtml";
@@ -26,34 +25,31 @@
 <div class="product_box">
     <div class="swiper-container product_details">
         <div class="swiper-wrapper">
-            <div class="swiper-slide">
-                <a>
-                    <img src="/Content/Images/img_01.jpg" alt="">
-                </a>
-            </div>
-            <div class="swiper-slide">
-                <a>
-                    <img src="/Content/Images/img_03.jpg" alt="">
-                </a>
-            </div>
-            <div class="swiper-slide">
-                <a>
-                    <img src="/Content/Images/img_08.jpg" alt="">
-                </a>
-            </div>
+            @foreach (var product in Model.Products)
+            {
+                foreach(var pro in product.ProPhotoes)
+                 {
+                     <div class="swiper-slide">
+                         <a>
+                             <img src="@pro.ImgUrl" alt=""/>
+                         </a>
+                     </div>
+                 }
+            }
+            
         </div>
     </div>
     <div class="pro_text">
         <h2>
-            <p>特级云南冬虫夏草冬虫夏草又名虫草冬虫夏草又名虫草</p>
+            <p>@Model.Products.First().Name</p>
             <span>
                 <img src="/Content/Images/icon_06.png"><img src="/Content/Images/icon_06.png"><img src="/Content/Images/icon_06.png"><img src="/Content/Images/icon_07.png"><img src="/Content/Images/icon_07.png">
             </span>
         </h2>
-        <p>冬虫夏草又名虫草，是我国民间惯用的一种名贵滋补药材，其营养成分高于人参，可入药，也可食用，是上乘的佳肴，具有很高的营养价值。</p>
+        <p>@Model.Products.First().Intro</p>
         <div class="pro_det">
             <h3>
-                <i>￥</i><b>188.00</b><span>特级</span><span>甄选</span>
+                <i>￥</i><b>@Model.Products.First().SellPrice</b><span>特级</span><span>甄选</span><span>甄选</span>
             </h3>
             <p>
                 <span>库存：616 </span><i></i><span>月销量：1988笔</span>
@@ -64,7 +60,7 @@
 
 <!---banner over--->
 <div class="pro_standard">
-    <h2>
+    @*<h2>
         <span>选择商品规格/口味</span><img src="/Content/Images/icon_015.png">
     </h2>
     <div class="pro_stand">
@@ -90,7 +86,7 @@
             <dd>五香味</dd>
             <dd>香辣味</dd>
         </dl>
-    </div>
+    </div>*@
     <div class="shu">
         <i>购买数量</i><span class="jia">
             <img src="/Content/Images/icon_017.png">
@@ -100,15 +96,15 @@
     </div>
 </div>
 
-<div class="pro_description modular">
+@*<div class="pro_description modular">
     <h2>
         <span>商品描述</span>
     </h2>
     <div class="miaoshu">
         冬虫夏草为虫体与菌座相连而成，全长9～12厘米。虫体如三眠老蚕，长约3～6厘米，粗约0.4～0.7厘米。外表呈深黄色，粗糙，背部有多数横皱纹，腹面有足8对，位于虫体中部的4对明显易见。
     </div>
-</div>
-<div class="pro_description modular">
+</div>*@
+@*<div class="pro_description modular">
     <h2>
         <span>基本参数</span>
     </h2>
@@ -128,13 +124,19 @@
             </tr>
         </table>
     </div>
-</div>
+</div>*@
 <div class="pro_description modular">
     <h2>
         <span>更多图片</span>
     </h2>
     <div class="tu_pian">
-        <img src="/Content/Images/img_04.jpg"><img src="/Content/Images/img_07.jpg"><img src="/Content/Images/img_08.jpg">
+        @foreach (var product in Model.Products)
+        {
+            foreach (var img in product.ProPhotoes)
+            {
+                <img src="@img.ImgUrl">
+            }
+        }
     </div>
 </div>
 <div class="pro_description modular">
@@ -203,7 +205,7 @@
 
     <div id="box" class="sidebar">
         <ul>
-            <li>
+            @*<li>
                 <a href="#luxian1" class="linka">
                     <span>商品描述</span><i></i>
                 </a>
@@ -212,7 +214,7 @@
                 <a href="#luxian2" class="linka">
                     <span>基本参数</span><i></i>
                 </a>
-            </li>
+            </li>*@
             <li>
                 <a href="#luxian3" class="linka">
                     <span>更多图片</span><i></i>

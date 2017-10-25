@@ -31,7 +31,7 @@ namespace WeFruit.EFModels
 
         public byte Type { get; set; }
 
-        [StringLength(50)]
+        [Column(TypeName = "text")]
         public string Intro { get; set; }
 
         [Column(TypeName = "numeric")]

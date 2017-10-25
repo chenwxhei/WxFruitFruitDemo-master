@@ -10,11 +10,12 @@ namespace WeFruit.Weixin.Controllers
 {
     public class ProductController : Controller
     {
-        HomeViewModel homeViewModel = new HomeViewModel();
+        HomeViewModel homeViewModel =new HomeViewModel();
         // GET: Product
-        public ActionResult Index()
+        public ActionResult Index(string code)
         {
-            return View();
+            homeViewModel.Products = ProductService.GetEntities(b => b.Code == code);
+            return View(homeViewModel);
         }
 
         public ISortService SortService { get; set; }
@@ -28,8 +29,21 @@ namespace WeFruit.Weixin.Controllers
 
         public ActionResult Commodity(string code)
         {
-            var Products = ProductService.GetEntities(b => b.Sorts.First().Code == code);
-            return View(Products);
+            if (SortService.GetCount(b=>b.Code==code)==0)
+            {
+                homeViewModel.Products = ProductService.GetEntities(b => b.Name.Contains(code));
+            }
+            else
+            {
+                homeViewModel.Products = ProductService.GetEntities(b => b.Sorts.First().Code == code);
+            }
+            return View(homeViewModel);
+        }
+
+        public ViewResult Search()
+        {
+            //homeViewModel.Products = ProductService.GetEntities(b => b.Name=code);
+            return View();
         }
     }
 }
