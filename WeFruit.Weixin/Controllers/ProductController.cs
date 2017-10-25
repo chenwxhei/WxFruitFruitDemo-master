@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Linq;
 using System.Web.Mvc;
 using WeFruit.IService;
 using WeFruit.Weixin.Models;
@@ -10,7 +7,11 @@ namespace WeFruit.Weixin.Controllers
 {
     public class ProductController : Controller
     {
-        HomeViewModel homeViewModel =new HomeViewModel();
+        private readonly HomeViewModel homeViewModel = new HomeViewModel();
+
+        public ISortService SortService { get; set; }
+
+        public IProductService ProductService { get; set; }
         // GET: Product
         public ActionResult Index(string code)
         {
@@ -18,18 +19,15 @@ namespace WeFruit.Weixin.Controllers
             return View(homeViewModel);
         }
 
-        public ISortService SortService { get; set; }
         public ActionResult Classify()
         {
             homeViewModel.Sorts = SortService.GetEntities(b => true);
             return View(homeViewModel);
         }
 
-        public IProductService ProductService { get; set; }
-
         public ActionResult Commodity(string code)
         {
-            if (SortService.GetCount(b=>b.Code==code)==0)
+            if (SortService.GetCount(b => b.Code == code) == 0)
             {
                 homeViewModel.Products = ProductService.GetEntities(b => b.Name.Contains(code));
             }
@@ -42,7 +40,6 @@ namespace WeFruit.Weixin.Controllers
 
         public ViewResult Search()
         {
-            //homeViewModel.Products = ProductService.GetEntities(b => b.Name=code);
             return View();
         }
     }

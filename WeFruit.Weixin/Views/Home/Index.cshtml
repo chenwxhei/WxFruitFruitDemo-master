@@ -14,7 +14,7 @@
     <div class="index_search">
         <input onclick="document.location = '@Url.Action("Search","Product")'" type="text" placeholder="请输入您要搜索的产品">
         <p>
-            <a href="#">
+            <a href="@Url.Action("Notice","Home")">
                 <img src="~/Content/Images/icon_05.png"><sup>@Model.NoticeNum</sup>
             </a>
         </p>
@@ -43,7 +43,7 @@
         <div class="swiper-wrapper">
             @foreach (var notice in Model.Notices)
             {
-                <a class="swiper-slide" href="@Url.Action("","",new {notice.Id})"><i>@notice.Title</i>@notice.Body</a>
+                <a class="swiper-slide" href="@Url.Action("Notice_xq","Home",new {notice.Id})"><i>@notice.Title</i>@notice.Body</a>
             }
         </div>
     </div>
@@ -51,7 +51,7 @@
 
 <div class="index_main">
     <p class="index_mtitle">
-        <a class="on" href="#">热销</a> <a href="#">推荐</a> <a href="index_xianshi.html">限时</a>
+        <a class="on" href="#">热销</a> <a href="#">推荐</a> <a href="#">限时</a>
     </p>
     <ul>
         @foreach (var product in Model.Products)

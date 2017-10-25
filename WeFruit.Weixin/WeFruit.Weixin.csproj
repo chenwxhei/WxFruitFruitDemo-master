@@ -285,6 +285,8 @@
     <Content Include="Views\Product\Commodity.cshtml" />
     <Content Include="Views\_LayoutNav.cshtml" />
     <Content Include="Views\Product\Search.cshtml" />
+    <Content Include="Views\Home\Notice.cshtml" />
+    <Content Include="Views\Home\Notice_xq.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

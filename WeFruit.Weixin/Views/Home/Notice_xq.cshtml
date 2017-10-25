@@ -1,0 +1,23 @@
+﻿@model WeFruit.Weixin.Models.HomeViewModel
+@{
+    ViewBag.Title = "Notice_xq";
+    Layout = "~/Views/_LayoutMaster.cshtml";
+}
+
+<!--ftop开始-->
+<div class="ftop">
+    <a class="back" onClick="javascript:history.back(-1);"><img src="/Content/Images/icon_03.png"></a>
+    <h2>公告详情</h2>
+    <a class="comea">&nbsp;</a>
+    <div style="clear: both;"></div>
+</div>
+<!--ftop开始-->
+<div class="notice noti">
+    <div class="notice_xq">
+        <h2><span>@Model.Notices.First().Body</span><i>@Model.Notices.First().ModiTime.Value.ToString("yyyy-MM-dd")</i></h2>
+        <div class="notice_text">
+            @Model.Notices.First().Contents
+        </div>
+    </div>
+</div>
+
