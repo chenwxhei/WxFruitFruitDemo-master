@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Senparc.Weixin.MP.AdvancedAPIs.OAuth;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -18,6 +19,8 @@ namespace WeFruit.Weixin.Models
         public IEnumerable<Sort> Sorts { get; set; }
 
         public int Proid { get; set; }
+
+        public OAuthUserInfo OAuthUserInfos { get; set; }
 
     }
 }

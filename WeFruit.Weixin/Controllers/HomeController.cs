@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Senparc.Weixin.MP.AdvancedAPIs.OAuth;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -25,6 +26,7 @@ namespace WeFruit.Weixin.Controllers
             homeViewModel.Notices = NoticeService.GetEntitiesByPage(3, 1, false, m => true, m => m.ModiTime);
             homeViewModel.Products = ProductService.GetEntitiesByPage(3, 1, false, p => p.Type == proid, p => p.Moditime);
             homeViewModel.Proid = proid;
+            homeViewModel.OAuthUserInfos = Session["userinfo"] as OAuthUserInfo;
             return View(homeViewModel);
         }
 
