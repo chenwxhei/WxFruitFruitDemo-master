@@ -188,10 +188,6 @@
             </div>
         </div>
     </div>
-
-
-
-
     <div class="fixft pro_bottom">
         <span>
             <b>
@@ -199,7 +195,7 @@
             </b><b>收藏</b>
         </span>
         <p>
-            <a>加入购物车</a>
+            <a id="shoppclick" data-code="@Model.Products.First().Code">加入购物车</a>
             <a href="#">立即购买</a>
         </p>
     </div>
@@ -251,24 +247,25 @@
     <script src="~/Scripts/index.js" type="text/javascript"></script>
     <script src="~/Scripts/timer.js"></script>
     <script src="~/Scripts/jquery.fullscreenslides.js"></script>
+    <script src="~/layer_mobile/layer.js"></script>
 
     <script>
+
         $(function() {
             $(".timer").timerInit();
+        });
+
+        var swiper1 = new Swiper('.product_details',
+        {
+            slidesPerView: 1.5,
+            paginationClickable: true,
+            spaceBetween: 30,
+            freeMode: true
         });
     </script>
 
     <script>
-        var swiper1 = new Swiper('.product_details',
-            {
-                slidesPerView: 1.5,
-                paginationClickable: true,
-                spaceBetween: 30,
-                freeMode: true
-            });
-    </script>
 
-    <script>
         $(function() {
             var jian = $(".jian");
             var jia = $(".jia");
@@ -400,4 +397,33 @@
         });
     </script>
 
+    <script>
+        $("#shoppclick").click(function() {
+            $.ajax({
+                url: "@Url.Action("Insert", "Product")",
+                type: "POST",
+                data: {
+                    qty: $('.shopcart-td-num').val(),//数量
+                    code: $(this).data("code")//商品Code
+
+                },
+                success: (function(res) {
+                    if (res == "200") {
+                        layer.open({
+                            content: '添加成功,在购物车等亲～',
+                            skin: 'msg',
+                            time:2
+                        });
+                    }  
+                    else {
+                        layer.open({
+                            content: '添加成功,在购物车等亲～',
+                            skin: 'msg',
+                            time: 2
+                        });
+                    }
+                })
+            });
+        });
+    </script>
 }

@@ -3,15 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WeFruit.IService;
+using WeFruit.Weixin.Models;
 
 namespace WeFruit.Weixin.Controllers
 {
     public class CenterController : Controller
     {
+        HomeViewModel homeViewModel = new HomeViewModel();
+
+        public ICustomerService CustomerService { get; set; }
         //用户信息首页
         public ActionResult Index()
         {
-            return View();
+            homeViewModel.Customers = CustomerService.GetEntity(b=>b.Id== Convert.ToInt32(Session["usid"]));
+            return View(homeViewModel);
         }
         //收藏页
         public ActionResult Collect()

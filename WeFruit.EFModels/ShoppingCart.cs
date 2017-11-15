@@ -12,7 +12,7 @@ namespace WeFruit.EFModels
         [Key]
         [Column(Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public long CusId { get; set; }
+        public int CusId { get; set; }
 
         [Key]
         [Column(Order = 1)]

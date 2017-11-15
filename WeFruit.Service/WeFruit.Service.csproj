@@ -45,7 +45,9 @@
     <Compile Include="NoticeService.cs" />
     <Compile Include="ProductService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShopCartService.cs" />
     <Compile Include="SortService.cs" />
+    <Compile Include="CustomerService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WeFruit.EFModels\WeFruit.EFModels.csproj">

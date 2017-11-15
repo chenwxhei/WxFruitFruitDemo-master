@@ -22,5 +22,9 @@ namespace WeFruit.Weixin.Models
 
         public OAuthUserInfo OAuthUserInfos { get; set; }
 
+        public Customer Customers { get; set; } 
+
+        public IEnumerable<ShoppingCart> ShoppingCarts { get; set; } 
+
     }
 }

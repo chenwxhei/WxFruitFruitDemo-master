@@ -44,7 +44,9 @@
     <Compile Include="IBaseRepository.cs" />
     <Compile Include="INoticeRepository.cs" />
     <Compile Include="IProductRepository.cs" />
+    <Compile Include="IShopCartRepository.cs" />
     <Compile Include="ISortRepository.cs" />
+    <Compile Include="ICustomerRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

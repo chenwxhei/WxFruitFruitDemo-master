@@ -19,7 +19,8 @@ namespace WeFruit.EFModels
         [StringLength(50)]
         public string Code { get; set; }
 
-        public long? CusId { get; set; }
+        [StringLength(50)]
+        public string CusId { get; set; }
 
         public byte? State { get; set; }
 
@@ -47,10 +48,6 @@ namespace WeFruit.EFModels
         public DateTime? PostTime { get; set; }
 
         public DateTime? ReceTime { get; set; }
-
-        public virtual Customer Customer { get; set; }
-
-        public virtual Payment Payment1 { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrederBillChi> OrederBillChis { get; set; }

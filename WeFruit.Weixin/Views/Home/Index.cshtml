@@ -106,43 +106,44 @@
     <script src="~/Scripts/swiper.min.js" type="text/javascript"></script>
     <script src="~/Scripts/index.js" type="text/javascript"></script>
     <script>
+
         var swiper1 = new Swiper('.index_banner',
-            {
-                pagination: '.swiper-index',
-                paginationClickable: true,
-                loop: true,
-                autoplay: 4000
-            });
+        {
+            pagination: '.swiper-index',
+            paginationClickable: true,
+            loop: true,
+            autoplay: 4000
+        });
 
         var swiper2 = new Swiper('.dlist',
-            {
-                loop: true,
-                autoplay: 4000,
-                direction: 'vertical'
-            });
+        {
+            loop: true,
+            autoplay: 4000,
+            direction: 'vertical'
+        });
 
-            $(".s").addClass("current");
-            $(".f").removeClass("current");
-            $(".g").removeClass("current");
-            $(".w").removeClass("current");
+        $(".s").addClass("current");
+        $(".f").removeClass("current");
+        $(".g").removeClass("current");
+        $(".w").removeClass("current");
 
         switch (@Model.Proid) {
-            case 1:
-                $(".one").addClass("on");
-                $(".two").removeClass("on");
-                $(".three").removeClass("on");
-                break;
-            case 2:
-                $(".two").addClass("on");
-                $(".one").removeClass("on");
-                $(".three").removeClass("on");
-                break;
-            case 3:
-                $(".three").addClass("on");
-                $(".two").removeClass("on");
-                $(".one").removeClass("on");
-                break;
+        case 1:
+            $(".one").addClass("on");
+            $(".two").removeClass("on");
+            $(".three").removeClass("on");
+            break;
+        case 2:
+            $(".two").addClass("on");
+            $(".one").removeClass("on");
+            $(".three").removeClass("on");
+            break;
+        case 3:
+            $(".three").addClass("on");
+            $(".two").removeClass("on");
+            $(".one").removeClass("on");
+            break;
 
-        }     
+        }
     </script>
 }

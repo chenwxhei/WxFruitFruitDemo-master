@@ -15,7 +15,8 @@ namespace WeFruit.EFModels
         [StringLength(50)]
         public string ProCode { get; set; }
 
-        public long? CusId { get; set; }
+        [StringLength(50)]
+        public string CusId { get; set; }
 
         [StringLength(50)]
         public string Body { get; set; }
@@ -25,8 +26,6 @@ namespace WeFruit.EFModels
         public int? Rate { get; set; }
 
         public DateTime? CreateTime { get; set; }
-
-        public virtual Customer Customer { get; set; }
 
         public virtual Product Product { get; set; }
     }

@@ -40,16 +40,6 @@ namespace WeFruit.EFModels
                 .IsUnicode(false);
 
             modelBuilder.Entity<Customer>()
-                .HasMany(e => e.OrderBillFaths)
-                .WithOptional(e => e.Customer)
-                .HasForeignKey(e => e.CusId);
-
-            modelBuilder.Entity<Customer>()
-                .HasMany(e => e.ProReviews)
-                .WithOptional(e => e.Customer)
-                .HasForeignKey(e => e.CusId);
-
-            modelBuilder.Entity<Customer>()
                 .HasMany(e => e.ShoppingCarts)
                 .WithRequired(e => e.Customer)
                 .HasForeignKey(e => e.CusId)
@@ -84,10 +74,9 @@ namespace WeFruit.EFModels
                 .Property(e => e.SumPrice)
                 .HasPrecision(10, 2);
 
-            modelBuilder.Entity<Payment>()
-                .HasMany(e => e.OrderBillFaths)
-                .WithOptional(e => e.Payment1)
-                .HasForeignKey(e => e.Payment);
+            modelBuilder.Entity<Product>()
+                .Property(e => e.Intro)
+                .IsUnicode(false);
 
             modelBuilder.Entity<Product>()
                 .Property(e => e.SellPrice)

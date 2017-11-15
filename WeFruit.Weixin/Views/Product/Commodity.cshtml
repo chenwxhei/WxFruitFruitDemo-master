@@ -29,7 +29,6 @@
         {
             <li>
                 <a href="@Url.Action("Index","Product",new {products.Code})">
-                    <p>@products.ProPhotoes.Count</p>
                     <img src="@products.ProPhotoes.First().ImgUrl"/>
                     <div class="search_item">
                         <p>@products.Name</p>
